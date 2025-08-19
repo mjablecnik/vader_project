@@ -1,0 +1,37 @@
+version: '3'
+# Manual is here: https://taskfile.dev/usage/
+
+tasks:
+  help:
+    aliases: [default]
+    cmd: "task --list"
+
+  update-dependencies:
+    desc: "Updates Dart dependencies"
+    cmd: "fvm dart pub get"
+
+  build-runner-watch:
+    cmd: "fvm dart run build_runner watch --delete-conflicting-outputs"
+    desc: "Runs code generation with watch (build_runner)"
+
+  build-runner:
+    cmd: "fvm dart run build_runner build --delete-conflicting-outputs"
+    desc: "Runs code generation (build_runner)"
+
+  run-app:
+    cmd: "fvm flutter run -t lib/main.dart"
+    desc: "Run application"
+
+  run-tests:
+    cmd: "fvm flutter test"
+    desc: "Run tests"
+
+  create-feature:
+    cmd: "mason make vader_feature"
+    desc: "Create feature code in features folder"
+    dir: "lib/features"
+
+  create-entity:
+    cmd: "mason make vader_entity"
+    desc: "Create entity code in entities folder"
+    dir: "lib/entities"
