@@ -39,3 +39,7 @@ tasks:
   generate-launcher-icons:
     cmd: "fvm dart run flutter_launcher_icons"
     desc: "Generate launcher icons"
+
+  generate-package-name:
+    cmd: "fvm dart run package_rename"
+    desc: "Generate package name"
