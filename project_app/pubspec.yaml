@@ -1,6 +1,6 @@
 name: project_app
 description: "A new Flutter project."
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none'
 
 version: 1.0.0+1
 
@@ -8,10 +8,19 @@ environment:
   sdk: ^3.9.0
 
 dependencies:
+  # Flutter dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
-  cupertino_icons: ^1.0.8
+  # Vader dependencies:
+  vader_app: 0.3.2
+  vader_core: 0.4.2
+
+  # Design dependencies:
+  cupertino_icons: 1.0.8
+
 
 dev_dependencies:
   flutter_test:
