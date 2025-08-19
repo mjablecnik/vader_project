@@ -35,3 +35,7 @@ tasks:
     cmd: "mason make vader_entity"
     desc: "Create entity code in entities folder"
     dir: "lib/entities"
+
+  generate-launcher-icons:
+    cmd: "fvm dart run flutter_launcher_icons"
+    desc: "Generate launcher icons"
