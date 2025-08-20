@@ -1,4 +1,4 @@
-name: project_app
+name: project_design
 description: "A new Flutter project."
 publish_to: 'none'
 
@@ -36,6 +36,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/icons/
     - assets/
 
   # fonts:

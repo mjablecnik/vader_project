@@ -23,7 +23,7 @@ tasks:
     desc: "Runs code generation (build_runner)"
 
   build-design:
-    cmd: "./bin/design_builder -s src -o lib -p example_design"
+    cmd: "./bin/design_builder -s src -o lib -p project_design"
     desc: "Generate Dart design files in lib folder"
 
   run-app:
