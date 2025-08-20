@@ -50,4 +50,7 @@ ios/Flutter/Flutter.podspec
 ios/Pods/
 ios/.symlinks/
 
+
 pubspec_overrides.yaml
+
+*.g.dart
