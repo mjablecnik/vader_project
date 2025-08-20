@@ -36,8 +36,8 @@ Design package for Flutter project.
 1) Add project_design into your project dependencies:
   ```yaml
   dependencies:
-    example_design:
-      git: git@github.com:mjablecnik/example_design.git
+    project_design:
+      path: ../project_design
   ```
 
 2) Into your root MaterialApp add our theme:
