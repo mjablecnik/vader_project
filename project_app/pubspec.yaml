@@ -20,6 +20,8 @@ dependencies:
 
   # Design dependencies:
   cupertino_icons: 1.0.8
+  project_design:
+    path: ../project_design
 
 
 dev_dependencies:

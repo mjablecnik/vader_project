@@ -43,8 +43,8 @@ Design package for Flutter project.
 2) Into your root MaterialApp add our theme:
   ```dart
   MaterialApp(
-    theme: DesignPackageTheme.light,
-    darkTheme: DesignPackageTheme.dark
+    theme: lightTheme,
+    darkTheme: darkTheme
   )
   ```
 

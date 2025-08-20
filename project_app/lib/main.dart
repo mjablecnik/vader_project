@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:project_design/project_design.dart';
+import 'package:project_design/theme/dark_theme.dart';
+import 'package:project_design/theme/light_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,8 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      theme: lightTheme,
+      darkTheme: darkTheme,
     );
   }
 }
@@ -49,6 +53,8 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             const Text('You have pushed the button this many times:'),
             Text('$_counter', style: Theme.of(context).textTheme.headlineMedium),
+            SizedBox(height: 300),
+            PrimaryButton(text: "Increment", size: ButtonSize.medium, onTap: _incrementCounter),
           ],
         ),
       ),
