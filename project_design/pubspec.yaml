@@ -1,0 +1,104 @@
+name: project_app
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  theme_tailor_annotation: 3.0.1
+  vader_design: 0.2.0
+  flutter_svg: 2.0.17
+
+  cupertino_icons: 1.0.8
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  storybook_toolkit: 2.0.0-dev.0
+  storybook_toolkit_tester: 1.4.0-dev.0
+
+  flutter_launcher_icons: 0.14.4
+  package_rename: 1.10.0
+
+  flutter_lints: 6.0.0
+  build_runner: 2.4.13
+  theme_tailor: 3.0.1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+
+flutter_launcher_icons:
+  image_path: "assets/icon.png"
+
+  android: "launcher_icon"
+  min_sdk_android: 21
+  ios: true
+  remove_alpha_ios: true
+#  web:
+#    generate: true
+#    image_path: "assets/icon.png"
+#    background_color: "#hexcode"
+#    theme_color: "#hexcode"
+#  windows:
+#    generate: true
+#    image_path: "assets/icon.png"
+#    icon_size: 48
+#  macos:
+#    generate: true
+#    image_path: "assets/icon.png"
+
+package_rename_config:
+  android:
+    app_name: Project Design # (String) The display name of the android app
+    package_name: cz.jablecnik.project_design # (String) The package name of the android app
+    #override_old_package: # (Optional) (String) Use this to delete the old folder structure of MainActivity or to use the existing code with the new package name
+    lang: kotlin # (Optional) (String) The android development language {kotlin(default) or java}
+
+  ios:
+    app_name: Project Design # (String) The display name of the ios app
+    bundle_name: ProjectDesign # (String) The bundle name of the ios app
+    package_name: cz.jablecnik.projectDesign # (String) The product bundle identifier of the ios app
+
+#   linux:
+#     app_name: # (String) The window title of the linux app
+#     package_name: # (String) The application id of the linux app
+#     exe_name: # (String) The executable name (binary name) of the linux app
+
+#   macos:
+#     app_name: # (String) The product name of the macos app
+#     package_name: # (String) The product bundle identifier of the macos app
+#     copyright_notice: # (String) The product copyright of the macos app
+
+#   web:
+#     app_name: # (String) The title of the web app and PWA
+#     short_app_name: # (String) The short display name of the PWA (Optional, defaults to app_name if not set)
+#     description: # (String) The description of the web app and PWA
+
+#   windows:
+#     app_name: # (String) The window title & software name of the windows app
+#     organization: # (String) The organization name (company name) of the windows app
+#     copyright_notice: # (String) The legal copyright of the windows app
+#     exe_name: # (String) The executable name (binary name) of the windows app
