@@ -54,3 +54,4 @@ ios/.symlinks/
 pubspec_overrides.yaml
 
 *.g.dart
+lib/l10n/

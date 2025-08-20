@@ -43,3 +43,8 @@ tasks:
   generate-package-name:
     cmd: "fvm dart run package_rename"
     desc: "Generate package name"
+
+  generate-localizations:
+    cmd: "fvm flutter gen-l10n"
+    desc: "Generate Flutter localizations"
+

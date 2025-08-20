@@ -1,0 +1,22 @@
+{
+  "appTitle": "Application Demo",
+  "@appTitle": {
+    "description": "Application title"
+  },
+  "homePageTitle": "Home Page",
+  "@homePageTitle": {
+    "description": "HomePage title"
+  },
+  "incrementButtonText": "Increment",
+  "@incrementButtonText": {
+    "description": "Increment button"
+  },
+  "pushButtonInfoText": "You have pushed the button this many times:",
+  "@pushButtonInfoText": {
+    "description": "Text displayed above the number of button presses"
+  },
+  "chooseLanguageTitle": "Select language:",
+  "@chooseLanguageTitle": {
+    "description": "Title of the language selection dialog"
+  }
+}
