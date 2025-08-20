@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_app/l10n/app_localizations.dart';
-import 'package:project_app/language_dialog.dart';
-import 'package:project_app/locale_provider.dart';
+import 'package:project_app/localization.dart';
 import 'package:project_design/project_design.dart';
 import 'package:project_design/theme/dark_theme.dart';
 import 'package:project_design/theme/light_theme.dart';
