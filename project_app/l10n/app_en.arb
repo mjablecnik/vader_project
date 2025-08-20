@@ -1,4 +1,9 @@
 {
+  "dialogYesButton": "Yes",
+  "dialogNoButton": "No",
+  "dialogQuitQuestionTitle": "Quit app",
+  "dialogQuitQuestionContent": "Are you sure you want to quit the app?",
+
   "appTitle": "Application Demo",
   "@appTitle": {
     "description": "Application title"
@@ -7,6 +12,7 @@
   "@homePageTitle": {
     "description": "HomePage title"
   },
+
   "incrementButtonText": "Increment",
   "@incrementButtonText": {
     "description": "Increment button"

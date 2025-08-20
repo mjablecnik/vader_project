@@ -1,6 +1,12 @@
 {
+  "dialogYesButton": "Ano",
+  "dialogNoButton": "Ne",
+  "dialogQuitQuestionTitle": "Ukončit aplikaci",
+  "dialogQuitQuestionContent": "Opravdu chcete aplikaci ukončit?",
+
   "appTitle": "Application Demo",
   "homePageTitle": "Domácí stránka",
+
   "incrementButtonText": "Přičíst",
   "pushButtonInfoText": "Tlačítko bylo celkem stisknuto:",
   "chooseLanguageTitle": "Vyberte jazyk:"
