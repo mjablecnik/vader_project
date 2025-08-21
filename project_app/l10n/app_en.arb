@@ -26,5 +26,9 @@
   "chooseLanguageTitle": "Select language:",
   "@chooseLanguageTitle": {
     "description": "Title of the language selection dialog"
+  },
+  "chooseThemeTitle": "Select theme:",
+  "@chooseThemeTitle": {
+    "description": "Title of the theme selection dialog"
   }
 }

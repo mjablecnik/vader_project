@@ -33,6 +33,19 @@ class Dialogs {
     );
   }
 
+  static Future<DialogListItem?> chooseTheme(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+
+    return Dialogs.showList(
+      context,
+      title: t.chooseThemeTitle,
+      items: [
+        DialogListItem(text: "Light", value: ThemeMode.light),
+        DialogListItem(text: "Dark", value: ThemeMode.dark),
+      ],
+    );
+  }
+
   static Future<DialogListItem?> chooseLanguage(BuildContext context) {
     final t = AppLocalizations.of(context)!;
     final Map languages = {"cs": "Čeština", "en": "English"};

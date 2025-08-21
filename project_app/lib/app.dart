@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return VaderApp(
       modules: [AppModule(), HomeModule()],
-      theme: ProjectTheme(),
+      theme: ProjectTheme(mode: ThemeMode.light),
       isDebug: false,
       preventTextScaling: false,
       entrypoint: InitialRoute().location,

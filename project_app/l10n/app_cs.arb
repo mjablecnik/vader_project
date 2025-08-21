@@ -11,5 +11,6 @@
 
   "incrementButtonText": "Přičíst",
   "pushButtonInfoText": "Tlačítko bylo celkem stisknuto:",
-  "chooseLanguageTitle": "Vyberte jazyk:"
+  "chooseLanguageTitle": "Vyberte jazyk:",
+  "chooseThemeTitle": "Vyberte vzhled:"
 }

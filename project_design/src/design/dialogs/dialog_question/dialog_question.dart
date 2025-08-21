@@ -27,7 +27,7 @@ class DialogQuestion extends StatelessWidget {
     return AlertDialog(
       title: Text(title),
       content: Text(content),
-      backgroundColor: Colors.white,
+      backgroundColor: currentStyle.backgroundColor,
       actions: [
         TextButton(
           onPressed: () {

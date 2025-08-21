@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 class DialogListTheme {
   static final light = DialogListStyle(
-    color: Colors.blue,
+    backgroundColor: Colors.white,
   );
 
   static final dark = DialogListStyle(
-    color: Colors.blue,
+    backgroundColor: Colors.black,
   );
 }

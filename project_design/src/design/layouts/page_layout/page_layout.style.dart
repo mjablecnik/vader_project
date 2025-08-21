@@ -7,6 +7,7 @@ class PageLayoutStyle {
     required this.toolbarHeight,
     required this.backgroundColor,
     required this.headerColor,
+    required this.titleTextColor,
   });
 
   @override
@@ -17,4 +18,7 @@ class PageLayoutStyle {
 
   @override
   final Color headerColor;
+
+  @override
+  final Color titleTextColor;
 }

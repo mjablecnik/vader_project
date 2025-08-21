@@ -26,7 +26,7 @@ class DialogList extends StatelessWidget {
     final currentStyle = style!;
     return AlertDialog(
         title: Text(title),
-        backgroundColor: Colors.white,
+        backgroundColor: currentStyle.backgroundColor,
         content: SizedBox(
           width: 300,
           child: ListView.builder(
@@ -57,9 +57,9 @@ class DialogList extends StatelessWidget {
   }
 }
 
-class DialogListItem {
+class DialogListItem<T> {
   final String text;
-  final String value;
+  final T value;
 
   DialogListItem({required this.text, required this.value});
 }

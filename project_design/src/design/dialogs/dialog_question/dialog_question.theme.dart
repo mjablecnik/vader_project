@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 class DialogQuestionTheme {
   static final light = DialogQuestionStyle(
-    color: Colors.blue,
+    backgroundColor: Colors.white,
   );
 
   static final dark = DialogQuestionStyle(
-    color: Colors.blue,
+    backgroundColor: Colors.black,
   );
 }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:project_app/features/app/utils/dialogs.dart';
 import 'package:project_app/l10n/app_localizations.dart';
 import 'package:project_design/project_design.dart';
-import 'package:project_design/design/layouts/page_layout/page_layout.dart';
 import 'package:vader_app/vader_app.dart';
 
 class LayoutPage extends StatelessWidget {
@@ -17,6 +16,12 @@ class LayoutPage extends StatelessWidget {
     if (result?.value != null) localeProvider.setLocale(Locale(result!.value));
   }
 
+  Future changeTheme(BuildContext context) async {
+    final themeProvider = ThemeProvider.of(context);
+    final result = await Dialogs.chooseTheme(context);
+    if (result?.value != null) themeProvider.setTheme(result!.value);
+  }
+
   @override
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context)!;
@@ -24,7 +29,10 @@ class LayoutPage extends StatelessWidget {
       quitDialog: Dialogs.quitAppQuestion,
       child: PageLayout(
         title: title,
-        actions: [TextButton(onPressed: () => changeLocalization(context), child: Text(t.localeName.toUpperCase()))],
+        actions: [
+          TextButton(onPressed: () => changeLocalization(context), child: Text(t.localeName.toUpperCase())),
+          TextButton(onPressed: () => changeTheme(context), child: Text(ThemeProvider.of(context).currentTheme.name)),
+        ],
         child: child,
       ),
     );
