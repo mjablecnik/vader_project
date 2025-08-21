@@ -1,18 +1,37 @@
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:project_app/features/app/app_module.dart';
 import 'package:project_app/features/app/pages/initial_page.dart';
 import 'package:project_app/features/home/home_module.dart';
 import 'package:project_app/l10n/app_localizations.dart';
 import 'package:project_design/project_design.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:vader_app/vader_app.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  appSetup();
+  runApp(const MyApp());
+}
+
+void appSetup() {
+  AppIcons.setup();
   logger.setObserver(CrashLoggerObserver());
 
-  AppIcons.setup();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.portraitUp,
+  ]);
 
-  runApp(const MyApp());
+  if (Platform.isAndroid) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        systemNavigationBarColor: Colors.black,
+        systemNavigationBarIconBrightness: Brightness.light,
+      ),
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -27,7 +46,7 @@ class MyApp extends StatelessWidget {
       preventTextScaling: false,
       entrypoint: InitialRoute().location,
       localization: Localization(
-        initialLocale: Locale('en'),
+        initialLocale: WidgetsBinding.instance.platformDispatcher.locale,
         supportedLocales: AppLocalizations.supportedLocales,
         delegates: AppLocalizations.localizationsDelegates,
       ),
