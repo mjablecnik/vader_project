@@ -11,13 +11,13 @@ class LayoutPage extends StatelessWidget {
   final Widget child;
 
   Future changeLocalization(BuildContext context) async {
-    final localeProvider = LocaleProvider.of(context);
+    final localeProvider = SettingsProvider.of(context);
     final result = await Dialogs.chooseLanguage(context);
     if (result?.value != null) localeProvider.setLocale(Locale(result!.value));
   }
 
   Future changeTheme(BuildContext context) async {
-    final themeProvider = ThemeProvider.of(context);
+    final themeProvider = SettingsProvider.of(context);
     final result = await Dialogs.chooseTheme(context);
     if (result?.value != null) themeProvider.setTheme(result!.value);
   }
@@ -31,7 +31,7 @@ class LayoutPage extends StatelessWidget {
         title: title,
         actions: [
           TextButton(onPressed: () => changeLocalization(context), child: Text(t.localeName.toUpperCase())),
-          TextButton(onPressed: () => changeTheme(context), child: Text(ThemeProvider.of(context).currentTheme.name)),
+          TextButton(onPressed: () => changeTheme(context), child: Text(SettingsProvider.of(context).currentTheme.name)),
         ],
         child: child,
       ),
