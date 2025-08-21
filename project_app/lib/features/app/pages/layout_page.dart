@@ -1,6 +1,6 @@
 import 'package:back_button_interceptor/back_button_interceptor.dart';
 import 'package:flutter/material.dart';
-import 'package:project_app/dialog_question.dart';
+import 'package:project_app/features/app/utils/dialogs.dart';
 import 'package:project_app/l10n/app_localizations.dart';
 import 'package:project_app/localization.dart';
 import 'package:project_design/project_design.dart';
@@ -45,7 +45,7 @@ class _LayoutPageState extends State<LayoutPage> {
       navigator.pop();
       return true;
     } else {
-      final exitApp = await showDialogQuestion(
+      final exitApp = await Dialogs.showQuestion(
         context,
         title: t.dialogQuitQuestionTitle,
         content: t.dialogQuitQuestionContent,

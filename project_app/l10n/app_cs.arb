@@ -1,6 +1,8 @@
 {
   "dialogYesButton": "Ano",
   "dialogNoButton": "Ne",
+  "dialogSubmitButton": "Potvrdit",
+  "dialogCancelButton": "Zrušit",
   "dialogQuitQuestionTitle": "Ukončit aplikaci",
   "dialogQuitQuestionContent": "Opravdu chcete aplikaci ukončit?",
 

@@ -7,11 +7,13 @@ class PageLayout extends StatelessWidget {
     super.key,
     required this.title,
     required this.child,
+    this.actions,
     this.style,
   });
 
   final String title;
   final Widget child;
+  final List<Widget>? actions;
   final PageLayoutStyle? style;
 
   Widget backButton(BuildContext context) {
@@ -35,6 +37,7 @@ class PageLayout extends StatelessWidget {
         toolbarHeight: currentStyle.toolbarHeight,
         backgroundColor: currentStyle.headerColor,
         leading: backButton(context),
+        actions: actions,
         title: Text(
           title,
           style: TextStyle(

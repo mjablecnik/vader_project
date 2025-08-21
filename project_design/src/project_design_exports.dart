@@ -16,6 +16,10 @@ export 'design/elements/label/label.dart';
 export 'design/elements/label/label.style.dart';
 export 'design/layouts/page_layout/page_layout.style.dart';
 export 'design/layouts/page_layout/page_layout.dart';
+export 'design/dialogs/dialog_list/dialog_list.dart';
+export 'design/dialogs/dialog_list/dialog_list.style.dart';
+export 'design/dialogs/dialog_question/dialog_question.dart';
+export 'design/dialogs/dialog_question/dialog_question.style.dart';
 export 'constants/assets.dart';
 export 'constants/colors.dart';
 export 'constants/utils.dart';
@@ -26,4 +30,5 @@ export 'package:project_design/design/components/components.style.dart';
 export 'package:project_design/design/elements/elements.style.dart';
 export 'package:project_design/design/elements/buttons/buttons.style.dart';
 export 'package:project_design/design/layouts/layouts.style.dart';
+export 'package:project_design/design/dialogs/dialogs.style.dart';
 

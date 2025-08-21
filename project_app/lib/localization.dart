@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:project_app/dialog_list.dart';
+import 'package:project_app/features/app/utils/dialogs.dart';
 import 'package:project_app/l10n/app_localizations.dart';
+import 'package:project_design/design/dialogs/dialog_list/dialog_list.dart';
 
 final Map languages = {"cs": "Čeština", "en": "English"};
 
 Future<DialogListItem?> showLanguageDialog(BuildContext context) {
   final t = AppLocalizations.of(context)!;
 
-  return showDialogList(
+  return Dialogs.showList(
     context,
     title: t.chooseLanguageTitle,
     items: AppLocalizations.supportedLocales
