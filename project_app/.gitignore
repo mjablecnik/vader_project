@@ -54,4 +54,5 @@ ios/.symlinks/
 pubspec_overrides.yaml
 
 *.g.dart
+*.freezed.dart
 lib/l10n/
