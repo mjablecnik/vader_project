@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_app/features/app/pages/error_page.dart';
+import 'package:project_app/features/home/pages/home_page.dart';
 import 'package:vader_app/vader_app.dart';
 
 part 'initial_page.g.dart';
@@ -29,7 +29,7 @@ class InitialPage extends StatelessWidget {
         child: CircularProgressIndicator(strokeWidth: 2.0),
       ),
       onFinish: () {
-        ErrorRoute().go(context);
+        HomeRoute().go(context);
       },
     );
   }

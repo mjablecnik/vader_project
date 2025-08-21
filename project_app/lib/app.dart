@@ -1,5 +1,6 @@
 import 'package:project_app/features/app/app_module.dart';
 import 'package:project_app/features/app/pages/initial_page.dart';
+import 'package:project_app/features/home/home_module.dart';
 import 'package:project_app/l10n/app_localizations.dart';
 import 'package:project_app/localization.dart';
 import 'package:project_design/project_design.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return VaderApp(
-      modules: [AppModule()],
+      modules: [AppModule(), HomeModule()],
       theme: ProjectTheme(),
       isDebug: false,
       entrypoint: InitialRoute().location,

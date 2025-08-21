@@ -5,7 +5,7 @@ part '{{name.snakeCase()}}.freezed.dart';
 part '{{name.snakeCase()}}.g.dart';
 
 @freezed
-class {{name.pascalCase()}} extends VaderEntity with _${{name.pascalCase()}} {
+abstract class {{name.pascalCase()}} extends VaderEntity with _${{name.pascalCase()}} {
   const {{name.pascalCase()}}._();
 
   const factory {{name.pascalCase()}}({

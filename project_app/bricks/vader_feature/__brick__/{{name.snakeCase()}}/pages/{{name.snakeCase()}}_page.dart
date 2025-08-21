@@ -5,11 +5,13 @@ import 'package:flutter/material.dart';
 part '{{name.snakeCase()}}_page.g.dart';
 
 @TypedGoRoute<{{name.pascalCase()}}Route>(path: '/{{name.pathCase()}}')
-class {{name.pascalCase()}}Route extends GoRouteData {
+class {{name.pascalCase()}}Route extends GoRouteData with _${{name.pascalCase()}}Route {
   const {{name.pascalCase()}}Route();
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => const {{name.pascalCase()}}Page();
+  Page<void> buildPage(BuildContext context, GoRouterState state) {
+    return const NoTransitionPage(child: {{name.pascalCase()}}Page());
+  }
 }
 
 class {{name.pascalCase()}}Page extends StatelessWidget {
