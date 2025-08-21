@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       modules: [AppModule()],
       theme: ProjectTheme(),
       isDebug: false,
-      entrypoint: '/app/initial',
+      entrypoint: InitialRoute().location,
       localization: Localization(
         locale: LocaleProvider.of(context).locale,
         supportedLocales: AppLocalizations.supportedLocales,
