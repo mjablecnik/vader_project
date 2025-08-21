@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
       modules: [AppModule(), HomeModule()],
       theme: ProjectTheme(),
       isDebug: false,
+      preventTextScaling: false,
       entrypoint: InitialRoute().location,
       localization: Localization(
         initialLocale: Locale('en'),
