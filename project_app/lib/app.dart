@@ -2,7 +2,6 @@ import 'package:project_app/features/app/app_module.dart';
 import 'package:project_app/features/app/pages/initial_page.dart';
 import 'package:project_app/features/home/home_module.dart';
 import 'package:project_app/l10n/app_localizations.dart';
-import 'package:project_app/localization.dart';
 import 'package:project_design/project_design.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:vader_app/vader_app.dart';
@@ -13,7 +12,7 @@ void main() {
 
   AppIcons.setup();
 
-  runApp(LocaleProvider(initialLocale: Locale('en'), child: const MyApp()));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
       isDebug: false,
       entrypoint: InitialRoute().location,
       localization: Localization(
-        locale: LocaleProvider.of(context).locale,
+        initialLocale: Locale('en'),
         supportedLocales: AppLocalizations.supportedLocales,
         delegates: AppLocalizations.localizationsDelegates,
       ),

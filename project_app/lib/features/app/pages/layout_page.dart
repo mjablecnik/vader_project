@@ -2,9 +2,9 @@ import 'package:back_button_interceptor/back_button_interceptor.dart';
 import 'package:flutter/material.dart';
 import 'package:project_app/features/app/utils/dialogs.dart';
 import 'package:project_app/l10n/app_localizations.dart';
-import 'package:project_app/localization.dart';
 import 'package:project_design/project_design.dart';
 import 'package:project_design/design/layouts/page_layout/page_layout.dart';
+import 'package:vader_app/vader_app.dart';
 
 
 class LayoutPage extends StatefulWidget {
@@ -33,7 +33,7 @@ class _LayoutPageState extends State<LayoutPage> {
 
   Future changeLocalization() async {
     final localeProvider = LocaleProvider.of(context);
-    final result = await showLanguageDialog(context);
+    final result = await Dialogs.chooseLanguage(context);
     if (result?.value != null) localeProvider.setLocale(Locale(result!.value));
   }
 

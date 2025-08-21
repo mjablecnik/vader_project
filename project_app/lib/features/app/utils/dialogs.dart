@@ -3,6 +3,7 @@ import 'package:project_app/l10n/app_localizations.dart';
 import 'package:project_design/design/dialogs/dialog_question/dialog_question.dart';
 import 'package:project_design/design/dialogs/dialog_list/dialog_list.dart';
 
+
 class Dialogs {
   static Future<DialogListItem?> showList(BuildContext context, {
     required String title,
@@ -29,6 +30,19 @@ class Dialogs {
           submitButtonText: t.dialogYesButton,
         );
       },
+    );
+  }
+
+  static Future<DialogListItem?> chooseLanguage(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+    final Map languages = {"cs": "Čeština", "en": "English"};
+
+    return Dialogs.showList(
+      context,
+      title: t.chooseLanguageTitle,
+      items: AppLocalizations.supportedLocales
+          .map((e) => DialogListItem(text: languages[e.languageCode], value: e.toLanguageTag()))
+          .toList(),
     );
   }
 }
