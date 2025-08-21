@@ -1,6 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:project_app/features/app/pages/layout_page.dart';
+import 'package:project_app/l10n/app_localizations.dart';
 import 'package:project_design/project_design.dart';
 import 'package:vader_app/vader_app.dart';
-import 'package:flutter/material.dart';
 
 part 'home_page.g.dart';
 
@@ -14,11 +16,36 @@ class HomeRoute extends GoRouteData with _$HomeRoute {
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() => _counter++);
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return PageLayout(title: "Home", child: Center(child: Text("This is Home page.")));
+    final t = AppLocalizations.of(context)!;
+    return LayoutPage(
+      title: t.homePageTitle,
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(t.pushButtonInfoText),
+            Text('$_counter', style: Theme.of(context).textTheme.headlineMedium),
+            SizedBox(height: 300),
+            PrimaryButton(text: t.incrementButtonText, size: ButtonSize.medium, onTap: _incrementCounter),
+          ],
+        ),
+      ),
+    );
   }
 }
