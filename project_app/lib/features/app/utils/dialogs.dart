@@ -45,4 +45,13 @@ class Dialogs {
           .toList(),
     );
   }
+
+  static Future<bool?> quitAppQuestion(BuildContext context) async {
+    final t = AppLocalizations.of(context)!;
+    return Dialogs.showQuestion(
+      context,
+      title: t.dialogQuitQuestionTitle,
+      content: t.dialogQuitQuestionContent,
+    );
+  }
 }

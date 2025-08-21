@@ -58,7 +58,7 @@ packages:
     source: hosted
     version: "2.1.1"
   back_button_interceptor:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: back_button_interceptor
       sha256: b85977faabf4aeb95164b3b8bf81784bed4c54ea1aef90a036ab6927ecf80c5a

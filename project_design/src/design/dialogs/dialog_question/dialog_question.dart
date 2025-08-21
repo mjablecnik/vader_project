@@ -39,7 +39,7 @@ class DialogQuestion extends StatelessWidget {
         ElevatedButton(
           onPressed: () {
             onSubmit?.call();
-            Navigator.of(context).pop(false);
+            Navigator.of(context).pop(true);
           },
           child: Text(submitButtonText),
         ),
