@@ -4,11 +4,12 @@ import 'package:project_app/config.dart';
 import 'package:project_app/features/app/pages/initial_page.dart';
 import 'package:project_app/features/app/pages/error_page.dart';
 import 'package:flutter/foundation.dart';
+import 'package:project_app/features/app/pages/root_page.dart';
 import 'package:vader_app/vader_app.dart';
 
 class AppModule extends VaderModule {
   @override
-  List<RouteBase> get routes => [$initialRoute, $errorRoute];
+  List<RouteBase> get routes => [$initialRoute, $appShellRoute];
 
   @override
   Injector? get services {

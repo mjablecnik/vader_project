@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:project_design/design/layouts/page_layout/page_layout.dart';
+import 'package:project_design/design/layouts/navigation_layout/navigation_layout.dart';
 import 'navigation_bar.style.dart';
 
 class NavigationBar extends StatelessWidget {
-  const NavigationBar({super.key, this.style});
+  const NavigationBar({super.key, this.style, required this.items, required this.currentIndex});
 
   final NavigationBarStyle? style;
+  final List<NavigationBarItem> items;
+  final int currentIndex;
 
   @override
   Widget build(BuildContext context) {
     final currentStyle = style!;
-    final index = PageIndexProvider.of(context);
 
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
@@ -18,7 +19,7 @@ class NavigationBar extends StatelessWidget {
         builder: (context, constraints) {
           //final itemW = ((constraints.maxWidth / 2.7)-30);
           final itemW = (constraints.maxWidth - 10) / 3;
-          final targetX = itemW * (index.currentIndex + 0.6); // střed nad aktivní ikonou
+          final targetX = itemW * (currentIndex + 0.6); // střed nad aktivní ikonou
 
           return TweenAnimationBuilder<double>(
             duration: const Duration(milliseconds: 350),
@@ -30,21 +31,14 @@ class NavigationBar extends StatelessWidget {
                 color: Colors.white,
                 clipper: _ConcaveNotchClipper1(
                   centerX: notchX,
-                  index: index.currentIndex,
+                  index: currentIndex,
                   animation: AlwaysStoppedAnimation(1.0),
                 ),
                 // Přidáno animation
                 child: SizedBox(height: 72, child: child),
               );
             },
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                NavigationBarItem(icon: Icons.layers, index: 0),
-                NavigationBarItem(icon: Icons.percent, index: 1),
-                NavigationBarItem(icon: Icons.person, index: 2),
-              ],
-            ),
+            child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: items),
           );
         },
       ),
@@ -53,23 +47,30 @@ class NavigationBar extends StatelessWidget {
 }
 
 class NavigationBarItem extends StatelessWidget {
-  const NavigationBarItem({super.key, required this.index, required this.icon});
+  const NavigationBarItem({
+    super.key,
+    required this.index,
+    required this.icon,
+    this.isActive = false,
+    required this.onTap,
+  });
+
   final int index;
+  final bool isActive;
   final IconData icon;
+  final Function(int) onTap;
 
   @override
   Widget build(BuildContext context) {
-    final pageIndex = PageIndexProvider.of(context);
-    final active = pageIndex.currentIndex == index;
     return InkWell(
       borderRadius: BorderRadius.circular(24),
-      onTap: () => pageIndex.setIndex(index),
+      onTap: () => onTap.call(index),
       child: Padding(
         padding: const EdgeInsets.all(14.0),
         child: AnimatedScale(
           duration: const Duration(milliseconds: 150),
-          scale: active ? 1.12 : 1.0,
-          child: Icon(icon, size: 26, color: active ? Colors.black : Colors.grey),
+          scale: isActive ? 1.12 : 1.0,
+          child: Icon(icon, size: 26, color: isActive ? Colors.black : Colors.grey),
         ),
       ),
     );

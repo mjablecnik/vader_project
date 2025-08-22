@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:project_app/features/app/pages/root_page.dart';
 import 'package:project_app/features/home/pages/home_page.dart';
 import 'package:vader_app/vader_app.dart';
 
 part 'initial_page.g.dart';
 
-@TypedGoRoute<InitialRoute>(path: '/app/initial')
+@TypedGoRoute<InitialRoute>(path: '/initial')
 class InitialRoute extends GoRouteData with _$InitialRoute {
   const InitialRoute();
 

@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             Text(t.pushButtonInfoText),
             Text('$_counter', style: Theme.of(context).textTheme.headlineMedium),
-            SizedBox(height: 300),
+            SizedBox(height: 200),
             PrimaryButton(text: t.incrementButtonText, size: ButtonSize.medium, onTap: _incrementCounter),
           ],
         ),

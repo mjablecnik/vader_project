@@ -22,7 +22,6 @@ onTap() => debugPrint("Test click.");
 pageLayoutStory(BuildContext context) {
   return PageLayout(
     title: "First page",
-    navigationIndex: 0,
     child: Center(
       child: PrimaryButton(
         text: "Go to next page",

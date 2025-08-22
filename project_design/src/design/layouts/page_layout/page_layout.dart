@@ -9,13 +9,11 @@ class PageLayout extends StatelessWidget {
     required this.child,
     this.actions,
     this.style,
-    this.navigationIndex,
   });
 
   final String title;
   final Widget child;
   final List<Widget>? actions;
-  final int? navigationIndex;
   final PageLayoutStyle? style;
 
   Widget backButton(BuildContext context) {
@@ -31,48 +29,27 @@ class PageLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     final currentStyle = style!;
 
-    return PageIndexProvider(
-      initialIndex: navigationIndex ?? 0,
-      child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          elevation: 1,
-          shadowColor: AppColors.grey500,
-          toolbarHeight: currentStyle.toolbarHeight,
-          backgroundColor: currentStyle.headerColor,
-          leading: backButton(context),
-          actions: actions,
-          title: Text(
-            title,
-            style: TextStyle(
-              color: currentStyle.titleTextColor,
-              fontFamily: AppFonts.inter,
-              fontWeight: FontWeight.w500,
-              fontSize: 18,
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        elevation: 1,
+        shadowColor: AppColors.grey500,
+        toolbarHeight: currentStyle.toolbarHeight,
+        backgroundColor: currentStyle.headerColor,
+        leading: backButton(context),
+        actions: actions,
+        title: Text(
+          title,
+          style: TextStyle(
+            color: currentStyle.titleTextColor,
+            fontFamily: AppFonts.inter,
+            fontWeight: FontWeight.w500,
+            fontSize: 18,
           ),
         ),
-        backgroundColor: currentStyle.backgroundColor,
-        bottomNavigationBar: navigationIndex != null ? NavigationBar() : null,
-        body: child,
       ),
+      backgroundColor: currentStyle.backgroundColor,
+      body: child,
     );
-  }
-}
-
-class PageIndexProvider extends InheritedNotifier<ValueNotifier<int>> {
-  PageIndexProvider({super.key, required int initialIndex, required super.child})
-      : super(notifier: ValueNotifier(initialIndex));
-
-  static PageIndexProvider of(BuildContext context) {
-    final PageIndexProvider? result = context.dependOnInheritedWidgetOfExactType<PageIndexProvider>();
-    assert(result != null, 'No AppSettingsProvider found in context');
-    return result!;
-  }
-
-  int get currentIndex => notifier!.value;
-
-  void setIndex(int newIndex) {
-    notifier!.value = newIndex;
   }
 }
