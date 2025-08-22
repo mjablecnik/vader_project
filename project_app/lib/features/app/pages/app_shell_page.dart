@@ -2,6 +2,7 @@ import 'package:flutter/material.dart' hide NavigationBar;
 import 'package:project_app/features/app/pages/error_page.dart';
 import 'package:project_app/features/home/pages/home_page.dart';
 import 'package:project_design/design/components/navigation_bar/navigation_bar.dart';
+import 'package:project_design/design/elements/navigation_bar_item/navigation_bar_item.dart';
 import 'package:vader_app/vader_app.dart';
 
 part 'app_shell_page.g.dart';
