@@ -4,7 +4,7 @@ import 'package:project_app/features/home/pages/home_page.dart';
 import 'package:project_design/design/components/navigation_bar/navigation_bar.dart';
 import 'package:vader_app/vader_app.dart';
 
-part 'root_page.g.dart';
+part 'app_shell_page.g.dart';
 
 @TypedShellRoute<AppShellRoute>(
   routes: [
@@ -17,32 +17,27 @@ class AppShellRoute extends ShellRouteData {
 
   @override
   Page<void> pageBuilder(BuildContext context, GoRouterState state, Widget navigator) {
-    return NoTransitionPage(child: RootPage(child: navigator));
+    return NoTransitionPage(child: AppShellPage(child: navigator));
   }
 }
 
-class RootPage extends StatefulWidget {
-  const RootPage({super.key, required this.child});
+class AppShellPage extends StatefulWidget {
+  const AppShellPage({super.key, required this.child});
 
   final Widget child;
 
   @override
-  State<RootPage> createState() => _RootPageState();
+  State<AppShellPage> createState() => _AppShellPageState();
 }
 
-class _RootPageState extends State<RootPage> {
+class _AppShellPageState extends State<AppShellPage> {
   int index = 0;
 
-  onTap(int index) {
-    setState(() => this.index = index);
-    if (index == 0) {
-      HomeRoute().go(context);
-    } else if (index == 1) {
-      ErrorRoute().go(context);
-    } else if (index == 2) {
-      ErrorRoute().go(context);
-    }
-  }
+  final List<({IconData icon, String name, GoRouteData route})> _navigationItems = [
+    (icon: Icons.layers, name: 'Home', route: HomeRoute()),
+    (icon: Icons.percent, name: 'Offers', route: ErrorRoute()),
+    (icon: Icons.person, name: 'Profile', route: ErrorRoute()),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -54,9 +49,16 @@ class _RootPageState extends State<RootPage> {
           NavigationBar(
             currentIndex: index,
             items: [
-              NavigationBarItem(icon: Icons.layers, index: 0, isActive: index == 0, onTap: onTap),
-              NavigationBarItem(icon: Icons.percent, index: 1, isActive: index == 1, onTap: onTap),
-              NavigationBarItem(icon: Icons.person, index: 2, isActive: index == 2, onTap: onTap),
+              for (int i = 0; i < _navigationItems.length; i++)
+                NavigationBarItem(
+                  icon: _navigationItems[i].icon,
+                  index: i,
+                  isActive: index == i,
+                  onTap: (int index) {
+                    setState(() => this.index = index);
+                    _navigationItems[index].route.go(context);
+                  },
+                ),
             ],
           ),
         ],
