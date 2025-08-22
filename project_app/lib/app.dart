@@ -1,12 +1,15 @@
 import 'dart:io';
 
+import 'package:catcher_2/catcher_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:project_app/config.dart';
 import 'package:project_app/features/app/app_module.dart';
 import 'package:project_app/features/app/pages/initial_page.dart';
 import 'package:project_app/features/home/home_module.dart';
 import 'package:project_app/l10n/app_localizations.dart';
 import 'package:project_design/project_design.dart';
+import 'package:sentry/sentry.dart';
 import 'package:vader_app/vader_app.dart';
 
 void main() {
@@ -15,14 +18,24 @@ void main() {
   runApp(const MyApp());
 }
 
+Future<void> runApp(Widget widget) async {
+  final consoleHandler = ConsoleHandler();
+  final sentryHandler = SentryHandler(SentryClient(SentryOptions(dsn: AppConfig().sentryDsn)));
+
+  Catcher2(
+    debugConfig: Catcher2Options(SilentReportMode(), [consoleHandler, sentryHandler]),
+    profileConfig: Catcher2Options(DialogReportMode(), [consoleHandler, sentryHandler]),
+    releaseConfig: Catcher2Options(DialogReportMode(), [sentryHandler]),
+    navigatorKey: navigatorKey,
+    enableLogger: true,
+    rootWidget: widget,
+  );
+}
+
 void appSetup() {
   AppIcons.setup();
-  logger.setObserver(CrashLoggerObserver());
 
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitDown,
-    DeviceOrientation.portraitUp,
-  ]);
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
 
   if (Platform.isAndroid) {
     SystemChrome.setSystemUIOverlayStyle(
@@ -51,19 +64,5 @@ class MyApp extends StatelessWidget {
         delegates: AppLocalizations.localizationsDelegates,
       ),
     );
-  }
-}
-
-class CrashLoggerObserver extends LoggerObserver {
-  const CrashLoggerObserver();
-
-  @override
-  void onError(err) {
-    //FirebaseCrashlytics.instance.recordError(err.error, err.stackTrace, reason: err.message);
-  }
-
-  @override
-  void onException(err) {
-    //FirebaseCrashlytics.instance.recordError(err.exception, err.stackTrace, reason: err.message);
   }
 }

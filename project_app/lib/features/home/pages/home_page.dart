@@ -3,6 +3,7 @@ import 'package:project_app/features/app/pages/layout_page.dart';
 import 'package:project_app/l10n/app_localizations.dart';
 import 'package:project_design/project_design.dart';
 import 'package:vader_app/vader_app.dart';
+import 'package:vader_core/clients/logger.dart' as Sentry;
 
 part 'home_page.g.dart';
 
@@ -30,6 +31,10 @@ class _HomePageState extends State<HomePage> {
     setState(() => _counter++);
   }
 
+  void generateError() async {
+    throw Exception("Test exception");
+  }
+
   @override
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context)!;
@@ -43,6 +48,8 @@ class _HomePageState extends State<HomePage> {
             Text('$_counter', style: Theme.of(context).textTheme.headlineMedium),
             SizedBox(height: 200),
             PrimaryButton(text: t.incrementButtonText, size: ButtonSize.medium, onTap: _incrementCounter),
+            SizedBox(height: 8),
+            PrimaryButton(text: "Generate error", size: ButtonSize.medium, onTap: generateError),
           ],
         ),
       ),
