@@ -16,8 +16,6 @@ export 'design/elements/chip/chip.style.dart';
 export 'design/elements/chip/chip.dart';
 export 'design/elements/label/label.dart';
 export 'design/elements/label/label.style.dart';
-export 'design/layouts/navigation_layout/navigation_layout.style.dart';
-export 'design/layouts/navigation_layout/navigation_layout.dart';
 export 'design/layouts/page_layout/page_layout.style.dart';
 export 'design/layouts/page_layout/page_layout.dart';
 export 'design/dialogs/dialog_list/dialog_list.dart';

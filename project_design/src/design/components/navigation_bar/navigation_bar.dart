@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project_design/design/layouts/navigation_layout/navigation_layout.dart';
 import 'navigation_bar.style.dart';
 
 class NavigationBar extends StatelessWidget {
