@@ -33,6 +33,7 @@ class LayoutPage extends StatelessWidget {
           TextButton(onPressed: () => changeLocalization(context), child: Text(t.localeName.toUpperCase())),
           TextButton(onPressed: () => changeTheme(context), child: Text(SettingsProvider.of(context).currentTheme.name)),
         ],
+        navigationIndex: 0,
         child: child,
       ),
     );
