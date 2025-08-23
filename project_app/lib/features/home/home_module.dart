@@ -1,6 +1,5 @@
 import 'package:project_app/features/app/app_module.dart';
-import 'package:project_app/features/home/pages/home_page.dart';
-import 'package:project_app/features/home/home_repository.dart';
+import 'package:project_app/features/home/pet_repository.dart';
 import 'package:vader_app/vader_app.dart';
 
 class HomeModule extends AppModule {
@@ -10,6 +9,6 @@ class HomeModule extends AppModule {
   @override
   Injector? get services {
     return super.services!
-      ..addSingleton(HomeRepository.new);
+      ..addSingleton(PetRepository.new);
   }
 }

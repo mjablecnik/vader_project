@@ -57,3 +57,4 @@ pubspec_overrides.yaml
 *.freezed.dart
 lib/l10n/
 lib/config.dart
+sandbox/

@@ -3,7 +3,6 @@ import 'package:project_app/features/app/pages/layout_page.dart';
 import 'package:project_app/l10n/app_localizations.dart';
 import 'package:project_design/project_design.dart';
 import 'package:vader_app/vader_app.dart';
-import 'package:vader_core/clients/logger.dart' as Sentry;
 
 part 'home_page.g.dart';
 
