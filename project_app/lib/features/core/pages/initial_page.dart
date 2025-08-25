@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_app/features/app/pages/app_shell_page.dart';
+import 'package:project_app/features/core/pages/app_shell_page.dart';
 import 'package:project_app/features/home/pages/home_page.dart';
 import 'package:vader_app/vader_app.dart';
 
