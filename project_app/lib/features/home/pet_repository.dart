@@ -1,14 +1,16 @@
+import 'package:project_app/entities/pet.dart';
 import 'package:vader_app/vader_app.dart';
 
 class PetRepository extends Repository {
   PetRepository({required super.httpClient, required super.storageClient});
 
-  Future<String> getPets() async {
+  Future<List<Pet>> getPets(PetStatus status) async {
     final result = await httpClient.fetch(
       path: '/pet/findByStatus',
-      params: {'status': 'available'},
+      params: {'status': status.name},
     );
-    print((result.data as List).first);
-    return Future.value('Hello world');
+
+    final List<Pet> petList = Pet.parseListFromJson([...result.data]);
+    return petList;
   }
 }
