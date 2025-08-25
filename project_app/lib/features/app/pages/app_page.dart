@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart' hide NavigationBar;
 import 'package:project_app/features/app/pages/home_page.dart';
-import 'package:project_app/features/app/pages/list_page.dart';
+import 'package:project_app/features/app/pages/pet_list_page.dart';
 import 'package:project_app/features/app/pages/settings_page.dart';
 import 'package:project_design/design/components/navigation_bar/navigation_bar.dart';
 import 'package:project_design/design/elements/navigation_bar_item/navigation_bar_item.dart';
@@ -11,7 +11,7 @@ part 'app_page.g.dart';
 @TypedShellRoute<AppRoute>(
   routes: [
     TypedGoRoute<HomeRoute>(path: '/home'),
-    TypedGoRoute<ListRoute>(path: '/list'),
+    TypedGoRoute<PetListRoute>(path: '/pets'),
     TypedGoRoute<SettingsRoute>(path: '/settings'),
   ],
 )
@@ -38,7 +38,7 @@ class _AppPageState extends State<AppPage> {
 
   final List<({IconData icon, String name, GoRouteData route})> _navigationItems = [
     (icon: Icons.layers, name: 'Home', route: HomeRoute()),
-    (icon: Icons.percent, name: 'Offers', route: ListRoute()),
+    (icon: Icons.percent, name: 'Pets', route: PetListRoute()),
     (icon: Icons.settings, name: 'Settings', route: SettingsRoute()),
   ];
 
