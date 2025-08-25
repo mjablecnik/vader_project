@@ -1,4 +1,4 @@
-import 'package:project_app/entities/pet.dart';
+import 'package:project_app/features/app/data/pet.dart';
 import 'package:vader_app/vader_app.dart';
 import 'package:vader_core/clients/cache_client.dart';
 

@@ -1,4 +1,4 @@
-import 'package:project_app/entities/pet.dart';
+import 'package:project_app/features/app/data/pet.dart';
 import 'package:vader_app/vader_app.dart';
 
 part 'pet_list_state.freezed.dart';
