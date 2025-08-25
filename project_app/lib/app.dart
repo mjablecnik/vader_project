@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:project_app/config.dart';
 import 'package:project_app/features/core/core_module.dart';
 import 'package:project_app/features/core/pages/initial_page.dart';
-import 'package:project_app/features/home/home_module.dart';
+import 'package:project_app/features/app/app_module.dart';
 import 'package:project_app/l10n/app_localizations.dart';
 import 'package:project_design/project_design.dart';
 import 'package:sentry/sentry.dart';
@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return VaderApp(
-      modules: [CoreModule(), HomeModule()],
+      modules: [CoreModule(), AppModule()],
       theme: ProjectTheme(mode: ThemeMode.light),
       isDebug: false,
       preventTextScaling: false,
