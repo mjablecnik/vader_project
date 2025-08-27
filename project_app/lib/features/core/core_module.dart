@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:project_app/config.dart';
 import 'package:project_app/features/core/pages/initial_page.dart';
 import 'package:project_app/features/core/pages/error_page.dart';
@@ -16,6 +14,7 @@ class CoreModule extends VaderModule {
     return Injector()
       ..addInstance(appConfig)
       ..addInstance(HttpClient(apiUrl: appConfig.apiUrl, enableLogs: true, preventLargeResponses: true, kIsWeb: kIsWeb))
-      ..addInstance(StorageClient(path: kIsWeb ? null : Directory.systemTemp.path));
+      ..addLazyInstance<StorageClient>(StorageClient.init());
+      //..addInstance(StorageClient(path: kIsWeb ? null : Directory.systemTemp.path));
   }
 }
