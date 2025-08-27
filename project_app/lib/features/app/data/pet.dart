@@ -24,12 +24,21 @@ class Pet extends VaderEntity {
     }
   }
 
-  static List<Pet> parseListFromJson(List<Map<String, Object?>> json) {
-    return [
-      for (var element in json)
-        if (element['id'] != null && element['name'] != null && !(element['photoUrls'] as List).contains('string'))
-          Pet.fromJson(element)
-    ];
+  static List<Pet> parseListFromJson(List<Map<String, Object?>?> json) {
+    final List<Pet> result = [];
+
+    for (var element in json) {
+      if (element != null &&
+          element['id'] != null &&
+          element['name'] != null &&
+          element['tags'] != null &&
+          element['photoUrls'] != null &&
+          !(element['photoUrls'] as List).contains('string')) {
+        result.add(Pet.fromJson(element));
+      }
+    }
+
+    return result;
   }
 
   @override
