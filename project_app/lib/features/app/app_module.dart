@@ -11,9 +11,11 @@ class AppModule extends CoreModule {
   @override
   Injector? get services {
     final services = super.services!;
-    return services..waitFor<StorageClient>(() {
-      services.addSingleton(PetRepository.new);
-      services.addSingleton(PetListCubit.new);
-    });
+    return services
+      ..waitFor<StorageClient>(() {
+        services.addSingleton(PetRepository.new);
+        services.addSingleton(PetListCubit.new);
+      })
+      ..commit();
   }
 }
