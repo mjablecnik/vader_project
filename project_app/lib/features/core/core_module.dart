@@ -14,7 +14,8 @@ class CoreModule extends VaderModule {
     return Injector()
       ..addInstance(appConfig)
       ..addInstance(HttpClient(apiUrl: appConfig.apiUrl, enableLogs: true, preventLargeResponses: true, kIsWeb: kIsWeb))
-      ..addLazyInstance<StorageClient>(StorageClient.init());
-      //..addInstance(StorageClient(path: kIsWeb ? null : Directory.systemTemp.path));
+      ..addLazyInstance<StorageClient>(StorageClient.init())
+      ..commit();
+    //..addInstance(StorageClient(path: kIsWeb ? null : Directory.systemTemp.path));
   }
 }

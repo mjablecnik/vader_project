@@ -12,10 +12,8 @@ class AppModule extends CoreModule {
   Injector? get services {
     final services = super.services!;
     return services..waitFor<StorageClient>(() {
-      print("Add pet services ${services.isCommited}");
       services.addSingleton(PetRepository.new);
       services.addSingleton(PetListCubit.new);
-      //services.commit();
     });
   }
 }
