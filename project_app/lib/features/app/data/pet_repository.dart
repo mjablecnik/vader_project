@@ -9,7 +9,7 @@ class PetRepository extends Repository {
     final result = await httpClient.fetch(
       path: '/pet/findByStatus',
       params: {'status': status.name},
-      //enableCache: Cache(storageClient, duration: Duration(minutes: 5)),
+      enableCache: Cache(storageClient, duration: Duration(minutes: 5)),
     );
 
     final List<Pet> petList = Pet.parseListFromJson([...result.data]);
