@@ -35,7 +35,7 @@ tasks:
     desc: "Run tests"
 
   create-component:
-    cmd: "./bin/code_builder -t component -p project_design -d src/design/"
+    cmd: "./bin/code_builder -t component -d src/design/"
     desc: "Create new component"
 
   generate-launcher-icons:

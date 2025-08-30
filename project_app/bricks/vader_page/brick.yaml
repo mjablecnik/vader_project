@@ -1,5 +1,5 @@
-name: vader_entity
-description: Create entity part in Vader Framework
+name: vader_page
+description: Create page part in Vader Framework
 version: 0.1.0
 
 environment:
@@ -18,5 +18,5 @@ environment:
 vars:
   name:
     type: string
-    description: Entity name
-    prompt: What is your entity name?
+    description: Page name
+    prompt: What is your page name?

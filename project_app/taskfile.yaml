@@ -26,15 +26,9 @@ tasks:
     cmd: "fvm flutter test"
     desc: "Run tests"
 
-  create-feature:
-    cmd: "mason make vader_feature"
-    desc: "Create feature code in features folder"
-    dir: "lib/features"
-
-  create-entity:
-    cmd: "mason make vader_entity"
-    desc: "Create entity code in entities folder"
-    dir: "lib/entities"
+  create-code:
+    cmd: "./bin/code_builder -d lib/features/"
+    desc: "Create code from mason template"
 
   generate-launcher-icons:
     cmd: "fvm dart run flutter_launcher_icons"

@@ -14,5 +14,4 @@ sealed class PetListState with _$PetListState {
   const factory PetListState.failed(dynamic error) = PetListStateFailed;
 
   const factory PetListState.loaded(List<Pet> petList) = PetListStateLoaded;
-
 }
