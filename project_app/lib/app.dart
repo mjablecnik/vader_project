@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
       theme: ProjectTheme(mode: ThemeMode.light),
       isDebug: false,
       preventTextScaling: false,
-      entrypoint: InitialRoute().location,
+      entrypoint: InitialPageRoute().location,
       localization: Localization(
         initialLocale: WidgetsBinding.instance.platformDispatcher.locale,
         supportedLocales: AppLocalizations.supportedLocales,

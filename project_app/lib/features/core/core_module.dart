@@ -6,7 +6,7 @@ import 'package:vader_app/vader_app.dart';
 
 class CoreModule extends VaderModule {
   @override
-  List<RouteBase> get routes => [$initialRoute, $errorRoute];
+  List<RouteBase> get routes => [$initialPageRoute, $errorPageRoute];
 
   @override
   Injector? get services {

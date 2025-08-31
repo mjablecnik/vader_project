@@ -4,9 +4,9 @@ import 'package:vader_app/vader_app.dart';
 
 part 'error_page.g.dart';
 
-@TypedGoRoute<ErrorRoute>(path: '/error')
-class ErrorRoute extends GoRouteData with $ErrorRoute {
-  const ErrorRoute();
+@TypedGoRoute<ErrorPageRoute>(path: '/error')
+class ErrorPageRoute extends GoRouteData with $ErrorPageRoute {
+  const ErrorPageRoute();
 
   @override
   Page<void> buildPage(BuildContext context, GoRouterState state) {

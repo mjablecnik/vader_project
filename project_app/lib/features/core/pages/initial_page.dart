@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:project_app/features/app/logic/pet_list_cubit.dart';
-import 'package:project_app/features/app/pages/app_page.dart';
 import 'package:project_app/features/app/pages/home_page.dart';
 import 'package:vader_app/vader_app.dart';
 
 part 'initial_page.g.dart';
 
-@TypedGoRoute<InitialRoute>(path: '/initial')
-class InitialRoute extends GoRouteData with $InitialRoute {
-  const InitialRoute();
+@TypedGoRoute<InitialPageRoute>(path: '/initial')
+class InitialPageRoute extends GoRouteData with $InitialPageRoute {
+  const InitialPageRoute();
 
   @override
   Page<void> buildPage(BuildContext context, GoRouterState state) {
-    return const NoTransitionPage(child: InitialPage());
+    return const NoTransitionPage(child: InitPage());
   }
 }
 
-class InitialPage extends StatelessWidget {
-  const InitialPage({super.key});
+class InitPage extends StatelessWidget {
+  const InitPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +29,7 @@ class InitialPage extends StatelessWidget {
         child: CircularProgressIndicator(strokeWidth: 2.0),
       ),
       onFinish: () {
-        HomeRoute().go(context);
+        HomePageRoute().go(context);
       },
     );
   }

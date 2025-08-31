@@ -4,9 +4,9 @@ import 'package:vader_app/vader_app.dart';
 
 part 'settings_page.g.dart';
 
-@TypedGoRoute<SettingsRoute>(path: '/settings')
-class SettingsRoute extends GoRouteData with $SettingsRoute {
-  const SettingsRoute();
+@TypedGoRoute<SettingsPageRoute>(path: '/settings')
+class SettingsPageRoute extends GoRouteData with $SettingsPageRoute {
+  const SettingsPageRoute();
 
   @override
   Page<void> buildPage(BuildContext context, GoRouterState state) {

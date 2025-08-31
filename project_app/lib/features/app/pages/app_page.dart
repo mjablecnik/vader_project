@@ -8,15 +8,15 @@ import 'package:vader_app/vader_app.dart';
 
 part 'app_page.g.dart';
 
-@TypedShellRoute<AppRoute>(
+@TypedShellRoute<AppPageRoute>(
   routes: [
-    TypedGoRoute<HomeRoute>(path: '/home'),
-    TypedGoRoute<PetListRoute>(path: '/pets'),
-    TypedGoRoute<SettingsRoute>(path: '/settings'),
+    TypedGoRoute<HomePageRoute>(path: '/home'),
+    TypedGoRoute<PetListPageRoute>(path: '/pets'),
+    TypedGoRoute<SettingsPageRoute>(path: '/settings'),
   ],
 )
-class AppRoute extends ShellRouteData {
-  const AppRoute();
+class AppPageRoute extends ShellRouteData {
+  const AppPageRoute();
 
   @override
   Page<void> pageBuilder(BuildContext context, GoRouterState state, Widget navigator) {
@@ -37,9 +37,9 @@ class _AppPageState extends State<AppPage> {
   int index = 0;
 
   final List<({IconData icon, String name, GoRouteData route})> _navigationItems = [
-    (icon: Icons.layers, name: 'Home', route: HomeRoute()),
-    (icon: Icons.percent, name: 'Pets', route: PetListRoute()),
-    (icon: Icons.settings, name: 'Settings', route: SettingsRoute()),
+    (icon: Icons.layers, name: 'Home', route: HomePageRoute()),
+    (icon: Icons.percent, name: 'Pets', route: PetListPageRoute()),
+    (icon: Icons.settings, name: 'Settings', route: SettingsPageRoute()),
   ];
 
   @override

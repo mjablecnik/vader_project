@@ -6,9 +6,9 @@ import 'package:vader_app/vader_app.dart';
 
 part 'home_page.g.dart';
 
-@TypedGoRoute<HomeRoute>(path: '/home')
-class HomeRoute extends GoRouteData with $HomeRoute {
-  const HomeRoute();
+@TypedGoRoute<HomePageRoute>(path: '/home')
+class HomePageRoute extends GoRouteData with $HomePageRoute {
+  const HomePageRoute();
 
   @override
   Page<void> buildPage(BuildContext context, GoRouterState state) {
