@@ -7,7 +7,7 @@ import 'package:vader_app/vader_app.dart';
 part 'initial_page.g.dart';
 
 @TypedGoRoute<InitialRoute>(path: '/initial')
-class InitialRoute extends GoRouteData with _$InitialRoute {
+class InitialRoute extends GoRouteData with $InitialRoute {
   const InitialRoute();
 
   @override

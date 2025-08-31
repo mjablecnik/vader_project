@@ -8,7 +8,7 @@ import 'package:vader_app/vader_app.dart';
 part 'pet_list_page.g.dart';
 
 @TypedGoRoute<PetListRoute>(path: '/pets')
-class PetListRoute extends GoRouteData with _$PetListRoute {
+class PetListRoute extends GoRouteData with $PetListRoute {
   const PetListRoute();
 
   @override
