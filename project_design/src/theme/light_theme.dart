@@ -14,13 +14,13 @@ ThemeData get lightTheme => ThemeData(
   colorScheme: ColorScheme.light(
     //primary: AppColors.red500,
     //border: AppColors.blue600,
-    surface: AppColors.grey200,
+    //surface: AppColors.grey200,
   ),
   //textTheme: TextTheme(),
-  appBarTheme: AppBarTheme(
-    color: AppColors.white,
-    surfaceTintColor: AppColors.white,
-  ),
+  //appBarTheme: AppBarTheme(
+  //  color: AppColors.white,
+  //  surfaceTintColor: AppColors.white,
+  //),
   extensions: [lightDesignThemeExtension],
 );
 
