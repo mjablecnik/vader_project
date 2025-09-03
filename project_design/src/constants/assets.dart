@@ -1,6 +1,7 @@
 import 'package:flutter_svg/flutter_svg.dart';
 
 String _assetPrefix = '';
+String? assetPackage;
 
 enum AppIcons {
   calendar('assets/icons/calendar.svg'),
@@ -21,7 +22,8 @@ enum AppIcons {
   SvgPicture get svg => SvgPicture.asset(pathWithPrefix);
 
   static setup() {
-    _assetPrefix = 'packages/project_design/';
+    assetPackage = 'wecard_design';
+    _assetPrefix = 'packages/$assetPackage/';
   }
 }
 

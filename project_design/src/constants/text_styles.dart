@@ -85,3 +85,29 @@ class TextStyles {
     fontSize: 12,
   );
 }
+
+class AppTextStyles {
+  static final TextStyle buttonTextStyle = TextStyle(
+    package: assetPackage,
+    fontFamily: AppFonts.poppins,
+    fontWeight: FontWeight.w600,
+    fontSize: 16,
+    height: 1.00,
+  );
+
+  static final TextStyle inputTextStyle = TextStyle(
+    package: assetPackage,
+    fontFamily: AppFonts.poppins,
+    fontWeight: FontWeight.w400,
+    fontSize: 16,
+    height: 1.00,
+  );
+
+  static final TextStyle inputLabelStyle = TextStyle(
+    package: assetPackage,
+    fontFamily: AppFonts.poppins,
+    fontWeight: FontWeight.w400,
+    fontSize: 12,
+    height: 1.00,
+  );
+}
