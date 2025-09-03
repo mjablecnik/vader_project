@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../{{package.snakeCase()}}_exports.dart';
+import '../../../{{package.snakeCase()}}_design_exports.dart';
 import 'package:storybook_toolkit/storybook_toolkit.dart';
 
 
@@ -17,18 +17,18 @@ String textKnobOptions(BuildContext context) => context.knobs.options(
       ],
     );
 
-onTap() => debugPrint("Test click.");
+void onTap() => debugPrint("Test click.");
 //endregion
 
 
-{{name.camelCase()}}Story(BuildContext context) {
+Widget {{name.camelCase()}}Story(BuildContext context) {
   return {{name.pascalCase()}}(
     text: textKnobOptions(context),
     onTap: onTap,
   );
 }
 
-{{name.camelCase()}}Story(BuildContext context) {
+Widget {{name.camelCase()}}Story(BuildContext context) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
     spacing: 30,

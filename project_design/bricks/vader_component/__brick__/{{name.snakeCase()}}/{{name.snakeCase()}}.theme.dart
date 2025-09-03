@@ -1,13 +1,12 @@
-import '../../../{{package.snakeCase()}}_exports.dart';
-import 'package:flutter/material.dart';
+import '../../../{{package.snakeCase()}}_design_exports.dart';
 
 
 class {{name.pascalCase()}}Theme {
   static final light = {{name.pascalCase()}}Style(
-    color: Colors.blue,
+    color: AppColors.blue,
   );
 
   static final dark = {{name.pascalCase()}}Style(
-    color: Colors.blue,
+    color: AppColors.blue,
   );
 }
