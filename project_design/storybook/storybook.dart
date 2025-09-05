@@ -20,15 +20,16 @@ Storybook storybook([List<Story>? stories]) {
         ),
       );
     },
-    plugins: initializePlugins(
+    plugins: StorybookPlugins(
+      initialDeviceFrameData: DeviceFrameData(
+        visibility: DeviceFrameVisibility.none,
+        device: Devices.ios.iPhone12ProMax,
+        orientation: Orientation.portrait,
+      ),
       enableCodeView: false,
       enableDirectionality: false,
       enableTimeDilation: false,
-      initialDeviceFrameData: DeviceFrameData(
-        visibility: DeviceFrameVisibility.none,
-        device: Devices.ios.iPhone12,
-        orientation: Orientation.portrait,
-      ),
+      enableTextSizer: true,
     ),
     initialStory: stories?.first.name,
     stories: [...assetIcons, ...stories ?? allStories],
