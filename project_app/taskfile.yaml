@@ -18,8 +18,24 @@ tasks:
     cmd: "fvm dart run build_runner build --delete-conflicting-outputs"
     desc: "Runs code generation (build_runner)"
 
+  release-android-bundle:
+    cmd: "fvm flutter build appbundle --release -t lib/app.dart"
+    desc: "Create release android app bundle"
+
+  release-android-apk:
+    cmd: "fvm flutter build apk --release -t lib/app.dart"
+    desc: "Create release android apk package"
+
+  release-ios-ipa:
+    cmd: "fvm flutter build ipa --release -t lib/app.dart"
+    desc: "Create release ios ipa package"
+
+  release-ios-app:
+    cmd: "fvm flutter build ios --release -t lib/app.dart"
+    desc: "Create release ios app package"
+
   run-app:
-    cmd: "fvm flutter run -t lib/main.dart"
+    cmd: "fvm flutter run -t lib/app.dart"
     desc: "Run application"
 
   run-tests:
