@@ -34,6 +34,10 @@ tasks:
     cmd: "fvm flutter build ios --release -t lib/app.dart"
     desc: "Create release ios app package"
 
+  get-android-certificate-fingerprint:
+    cmd: "bash bin/get-sha.sh"
+    desc: "Get SHA256 certificate fingerprint for Android package"
+
   run-app:
     cmd: "fvm flutter run -t lib/app.dart"
     desc: "Run application"
