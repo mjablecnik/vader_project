@@ -2,5 +2,6 @@
 # Created by `dart pub`
 .dart_tool/
 .idea/
+bin/
 config.dart
 fly.toml
