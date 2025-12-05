@@ -4,7 +4,7 @@ import 'package:project_app/features/core/core_module.dart';
 import 'package:project_app/features/app/data/pet_repository.dart';
 import 'package:vader_app/vader_app.dart';
 
-class AppModule extends CoreModule {
+class AppModule extends VaderModule {
   @override
   List<RouteBase> get routes => [$appPageRoute];
 

@@ -1308,10 +1308,10 @@ packages:
   vader_app:
     dependency: "direct main"
     description:
-      path: "/Users/martin/Projects/Packages/vader/core/vader_app"
-      relative: false
+      path: "../../../Packages/vader/core/vader_app"
+      relative: true
     source: path
-    version: "0.4.0"
+    version: "0.5.0"
   vader_core:
     dependency: "direct main"
     description:
