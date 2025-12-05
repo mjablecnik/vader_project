@@ -15,9 +15,9 @@ class TaskController extends Controller {
     onMcp(TaskTools.deleteTask, deleteTask);
   }
 
-  Future<ApiResponse> listTasks(context) async {
+  Future<ApiResponse> listTasks(HandlerContext context) async {
     try {
-      final taskService = injector.use<TaskService>();
+      final taskService = injector.get<TaskService>();
       final allEvents = await taskService.listAllTasks();
       return SuccessResponse.ok(data: allEvents);
     } catch (e) {
@@ -35,7 +35,7 @@ class TaskController extends Controller {
       return ErrorResponse.badRequest();
     }
 
-    final taskService = injector.use<TaskService>();
+    final taskService = injector.get<TaskService>();
 
     try {
       final createdTask = await taskService.createTask(
@@ -52,7 +52,7 @@ class TaskController extends Controller {
   }
 
   Future<ApiResponse> deleteTask(HandlerContext context) async {
-    final taskService = injector.use<TaskService>();
+    final taskService = injector.get<TaskService>();
 
     final String taskId;
     if (context.httpRequest != null) {
