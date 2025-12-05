@@ -1,5 +1,5 @@
 import 'package:project_app/features/app/data/pet.dart';
-import 'package:vader_app/vader_app.dart';
+import 'package:vader_app/vader_app.dart' hide Cache;
 import 'package:vader_core/clients/cache_client.dart';
 
 class PetRepository extends Repository {

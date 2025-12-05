@@ -9,13 +9,9 @@ class AppModule extends CoreModule {
   List<RouteBase> get routes => [$appPageRoute];
 
   @override
-  Injector? get services {
-    final services = super.services!;
-    return services
-      ..waitFor<StorageClient>(() {
-        services.addSingleton(PetRepository.new);
-        services.addSingleton(PetListCubit.new);
-      })
-      ..commit();
+  Future<Injector> services(Injector i) async {
+    i.addSingleton(PetRepository.new);
+    i.addSingleton(PetListCubit.new);
+    return i;
   }
 }

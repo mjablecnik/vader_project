@@ -9,12 +9,12 @@ class CoreModule extends VaderModule {
   List<RouteBase> get routes => [$initialPageRoute, $errorPageRoute];
 
   @override
-  Injector? get services {
+  Future<Injector> services(Injector i) async {
     final appConfig = AppConfig();
-    return Injector()
-      ..addInstance(appConfig)
-      ..addInstance(HttpClient(apiUrl: appConfig.apiUrl, enableLogs: true, preventLargeResponses: true, kIsWeb: kIsWeb))
-      ..addLazyInstance<StorageClient>(StorageClient.init())
-      ..commit();
+    i.addInstance(appConfig);
+    i.addInstance(HttpClient(apiUrl: appConfig.apiUrl, enableLogs: true, preventLargeResponses: true, kIsWeb: kIsWeb));
+    i.addInstance<StorageClient>(await StorageClient.init(path: (await getApplicationDocumentsDirectory()).path));
+
+    return i;
   }
 }
