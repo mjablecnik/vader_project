@@ -1,0 +1,40 @@
+version: '3'
+# Manual is here: https://taskfile.dev/usage/
+
+tasks:
+  help:
+    aliases: [default]
+    cmd: "task --list"
+
+  update-dependencies:
+    desc: "Updates Dart dependencies"
+    cmd: "fvm dart pub get"
+
+  build-runner-watch:
+    cmd: "fvm dart run build_runner watch --delete-conflicting-outputs"
+    desc: "Runs code generation with watch (build_runner)"
+
+  build-runner:
+    cmd: "fvm dart run build_runner build --delete-conflicting-outputs"
+    desc: "Runs code generation (build_runner)"
+
+  run-prod:
+    cmd: "dart lib/server.dart -D FLAVOR=prod"
+    desc: "Run prod version of app"
+
+  run-dev:
+    cmd: "dart --enable-vm-service lib/server.dart"
+    desc: "Run dev version of app"
+
+  build:
+    cmd: "dart compile exe lib/server.dart --target-os=linux --target-arch=x64 -o bin/server -D FLAVOR=prod"
+    desc: "Compile Dart server"
+
+  deploy:
+    cmd: "flyctl deploy"
+    desc: "Deploy service to Fly.io"
+    deps: [build]
+
+  launch:
+    cmd: "flyctl launch"
+    desc: "Initialize service to Fly.io"
